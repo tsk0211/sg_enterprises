@@ -1,0 +1,47 @@
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	padding: 6px;
+	padding-bottom: 12px;
+	background-color: #FFFFFFF6;
+}
+
+.logoDiv {
+	display: flex;
+	width: 30vw;
+}
+
+.logoImg {
+	width: 90px;
+	aspect-ratio: 5/3;
+	margin-left: 10px;
+}
+
+.logoTxt {
+	font-family: 'Lato', sans-serif, serif;
+	font-size: 2.5rem;
+	font-weight: 900;
+	margin-left: 15px;
+	color: #ff6600;
+}
+
+.contactDiv {
+	background-color: black;
+	color: #F5F5F6;
+	align-items: center;
+	display: flex;
+}
+
+.contactDiv span {
+	margin: 5px;
+	margin-left: 25px;
+}
+
+.siteAnchor {
+	display: flex;
+	text-decoration: none;
+}
+
+.siteAnchor:visited {
+	color: inherit;
+}

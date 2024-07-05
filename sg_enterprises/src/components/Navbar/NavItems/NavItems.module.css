@@ -1,0 +1,46 @@
+.navItemList {
+	list-style: none;
+	text-decoration: none;
+	display: flex;
+	width: 60vw;
+	justify-content: space-around;
+}
+
+.navItems {
+	display: flex;
+	padding: 10px;
+	align-items: center;
+	border-radius: 5px;
+	color: #000000FF;
+}
+
+.navItems:active {
+	color: #000000FF;
+}
+
+.navItems::selection {
+	color: #000000FF;
+}
+
+.navItems:visited {
+	color: #000000FF;
+}
+
+.navItems:hover {
+	background-color: #2728228f;
+}
+
+.navTags {
+	font-family: "Lato", "Poppins";
+	font-weight: 550;
+	text-decoration: none;
+}
+
+.menuBtn {
+	display: none;
+	background-color: inherit;
+	border: 0;
+	animation: transform 1s ease-in;
+	margin: 5px;
+}
+
