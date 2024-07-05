@@ -2,27 +2,14 @@
 	list-style: none;
 	text-decoration: none;
 	display: flex;
-	width: 60vw;
 	justify-content: space-around;
 }
 
 .navItems {
 	display: flex;
-	padding: 10px;
-	align-items: center;
-	border-radius: 5px;
-	color: #000000FF;
-}
-
-.navItems:active {
-	color: #000000FF;
-}
-
-.navItems::selection {
-	color: #000000FF;
-}
-
-.navItems:visited {
+	padding: 1rem;
+	align-items: baseline;
+	border-radius: 5px 5px 0 0 ;
 	color: #000000FF;
 }
 
@@ -34,13 +21,40 @@
 	font-family: "Lato", "Poppins";
 	font-weight: 550;
 	text-decoration: none;
+	color: #000000FF;
 }
 
-.menuBtn {
-	display: none;
-	background-color: inherit;
-	border: 0;
-	animation: transform 1s ease-in;
-	margin: 5px;
+.navTags:active {
+	color: #000000FF;
 }
 
+.navTags::selection {
+	color: #000000FF;
+}
+
+.navTags:visited {
+	color: #000000FF;
+}
+
+.dropdown {
+	position: absolute;
+	background-color: #F5F5F6FF;
+	width: 200px;
+	margin-top: 5px;
+	text-align: center;
+}
+
+.dummyBox {
+	position: absolute;
+	height: 5px;
+	width: 200px;
+	background-color: transparent;
+
+}
+
+@media (max-width: 950px) {
+	.navItemList {
+		display: none;
+	}
+
+}

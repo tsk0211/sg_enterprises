@@ -6,8 +6,12 @@
 }
 
 body {
+	width: 100vw;
+	width: 100dvw;
 	height: 100vh;
-	background-image: url("./assets/background.jpg");
+	height: 100dvh;
+	
+	background-image: url("/src/assets/background.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;

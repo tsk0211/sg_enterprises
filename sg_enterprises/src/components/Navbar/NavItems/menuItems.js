@@ -1,28 +1,49 @@
 export const menuItems= [
 	{
 		title : "Home",
+		path : "./"
 	},
 	{
 		title : "About Us",
+		path : "./about"
 	},
 	{
 		title : "Products",
-		submenu: [
-			{
-				title :  "A"
-			}, 
-			{
-				title : "B"
-			}, 
-			{
-				title : "C"
-			}
-		]
+		path : "./products"
 	},
 	{
-		title : "Capabilities"
+		title : "Capabilities",
+		path : "./cap"
 	},
 	{
-		title : "Contact"
+		title : "Contact",
+		path : "./contact"
+	}
+]
+
+export const products= [
+	{
+		title :  "A",
+		path : "./products/A"
+	}, 
+	{
+		title : "B",
+		path : "./products/B"
+	}, 
+	{
+		title : "C",
+		path : "./products/C"
+	}
+]
+
+export const cap= [
+	{
+		title : "X"
+	},
+	{
+		title : "Y"
+	},
+	{
+		title : "Z"
 	}
 ]

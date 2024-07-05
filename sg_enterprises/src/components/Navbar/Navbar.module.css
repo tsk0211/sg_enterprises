@@ -1,14 +1,18 @@
+.navbarMain {
+	width: -webkit-fill-available;
+	height: 20vh;
+}
+
 .navbar {
 	display: flex;
 	justify-content: space-between;
-	padding: 6px;
-	padding-bottom: 12px;
-	background-color: #FFFFFFF6;
+	padding: 8px;
+	padding-bottom: 0px;
+	background-color: #fffffff6;
 }
 
 .logoDiv {
 	display: flex;
-	width: 30vw;
 }
 
 .logoImg {
@@ -18,7 +22,7 @@
 }
 
 .logoTxt {
-	font-family: 'Lato', sans-serif, serif;
+	font-family: "Lato", sans-serif, serif;
 	font-size: 2.5rem;
 	font-weight: 900;
 	margin-left: 15px;
@@ -27,7 +31,7 @@
 
 .contactDiv {
 	background-color: black;
-	color: #F5F5F6;
+	color: #f5f5f6;
 	align-items: center;
 	display: flex;
 }
@@ -44,4 +48,68 @@
 
 .siteAnchor:visited {
 	color: inherit;
+}
+
+.icon {
+	color: red;
+}
+
+.menuBtn {
+	display: none;
+	border: 0;
+	margin-right: 15px;
+	background-color: #00000003;
+}
+
+.dropDown {
+	width: 80vw;
+	width: 80dvw;
+	height: 60vh;
+	height: 60dvh;
+
+	position: absolute;
+	text-align: center;
+	top: 12.5vh;
+	top: 12.5dvh;
+	margin-left: 10vw;
+	margin-left: 10dvw;
+	border-radius: 5px;
+	background-color: #FFFFFF;
+
+}
+
+.navItems {
+	padding: 15px;
+	padding-left: auto;
+	padding-right: auto;
+}
+
+.navTags {
+	text-decoration: none;
+	font-size: 1.2rem;
+	font-weight: 650;
+	color: #000000;
+}
+
+@media (max-width: 950px) {
+	.menuBtn {
+		display: block;
+		align-self: center;
+	}
+}
+
+@media (max-width: 490px) {
+	.logoTxt {
+		font-size: 1.75rem;
+		margin: auto;
+		margin-left: 15px;
+	}
+
+	.contactDiv {
+		font-size: 0.8rem;
+	}
+
+	.logoImg {
+		width: 60px;
+	}
 }
