@@ -1,38 +1,70 @@
 import Footer from "../components/Footer/Footer";
-import auth from "../assets/env.json";
 import "./styles.css";
 import { useState } from "react";
 
+
+
+let baseURL = "http://localhost:6000";
+
 function ContactUs() {
-	const [fileObj, setFileObj] = useState({ name: "" });
 	const [formObj, setForm] = useState({
 		name: "",
 		email: "",
 		phone: "",
 		subject: "",
 		msg: "",
+		file: [],
 	});
 
-	function fileChange(e) {
-		if (e.target.files) {
-			setFileObj(e.target.files[0]);
-			console.log("File Present");
-		}
-	}
-
 	const handleForm = (e) => {
-		console.log(e);
-		const name= e.target.name;
-		const val= e.target.value;
+		const name = e.target.name;
+		var val = e.target.value;
 
+		if (name === "file") {
+			val = e.target.files[0];
+		}
 		setForm({
 			...formObj,
 			[name]: val,
 		});
 	};
 
+	const sendEmail = async (mail) => {
+		const res = await fetch(`${baseURL}/api/sendmail`,{
+			method: "post",
+			body: JSON.stringify(mail),
+			headers: {
+				Accept: "application/json",
+				"Content-type": "application/json"
+			}
+		}).then((res) => {
+			console.log("Successful :-> " , res);
+			if (res.status < 300 && res.status > 199) {
+				alert('Successful' + mail);
+			}
+		});
+
+		console.log(JSON.stringify(res));
+	};
+
 	function clickFunc(e) {
 		e.preventDefault();
+
+		const mail = {
+			from: formObj.email,
+			to: "sgent2206@gmail.com",
+			subject: formObj.subject,
+			text: formObj.msg,
+			html: "<h3>Hello world !!</h3>"
+		};
+
+		console.log(JSON.stringify(mail));
+
+		try {
+			sendEmail(mail);
+		} catch (e) {
+			console.log(e);
+		}
 	}
 
 	document.addEventListener("DOMContentLoaded", function () {
@@ -88,7 +120,6 @@ function ContactUs() {
 						name="email"
 						onChange={handleForm}
 						placeholder="Email        eg. example@abc.com"
-						pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 						required
 					/>
 				</div>
@@ -147,12 +178,12 @@ function ContactUs() {
 						type="file"
 						id="file"
 						name="file"
-						onChange={fileChange}
+						onChange={handleForm}
 						required
 					/>
 				</div>
 
-				<p>File Name: {fileObj.name}</p>
+				<p>File Name: {formObj.files}</p>
 
 				<button type="submit" className="submitBtn" onClick={clickFunc}>
 					Submit
