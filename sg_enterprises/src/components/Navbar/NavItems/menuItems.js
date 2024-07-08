@@ -1,49 +1,52 @@
 export const menuItems= [
 	{
 		title : "Home",
-		path : "./"
+		path : "/"
 	},
 	{
 		title : "About Us",
-		path : "./about"
+		path : "/about"
 	},
 	{
 		title : "Products",
-		path : "./products"
+		path : "/products"
 	},
 	{
 		title : "Capabilities",
-		path : "./cap"
+		path : "/cap"
 	},
 	{
 		title : "Contact",
-		path : "./contact"
+		path : "/contact"
 	}
 ]
 
 export const products= [
 	{
 		title :  "A",
-		path : "./products/A"
+		path : "/products/A"
 	}, 
 	{
 		title : "B",
-		path : "./products/B"
+		path : "/products/B"
 	}, 
 	{
 		title : "C",
-		path : "./products/C"
+		path : "/products/C"
 	}
 ]
 
 export const cap= [
 	{
-		title : "X"
+		title : "X",
+		path : "/products/X"
 	},
 	{
-		title : "Y"
+		title : "Y",
+		path : "/products/Y"
 	},
 	{
-		title : "Z"
+		title : "Z",
+		path : "/products/Z"
 	}
 ]

@@ -1,13 +1,13 @@
 .navbarMain {
 	width: -webkit-fill-available;
-	height: 20vh;
+	height: 15vh;
+	height: 15dvh;
 }
 
 .navbar {
 	display: flex;
 	justify-content: space-between;
 	padding: 8px;
-	padding-bottom: 0px;
 	background-color: #fffffff6;
 }
 

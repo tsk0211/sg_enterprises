@@ -20,7 +20,8 @@ const NavItems = () => {
 							onMouseLeave={() => setDrop(false)}
 						>
 							<li className={st.navItems} key={index}>
-								<Link to={item.path} className={st.navTags}>
+								{console.log(item.path)}
+								<Link to={item.path} className={st.navTags} key={index}>
 									{item.title}
 								</Link>
 							</li>
@@ -31,7 +32,7 @@ const NavItems = () => {
 									{products.map((e, i) => {
 										return (
 											<li className={st.navItems} key={i}>
-												<Link to={"./"} className={st.navTags}>
+												<Link to={"./"} className={st.navTags} key={i}>
 													{e.title}
 												</Link>
 											</li>
@@ -52,7 +53,7 @@ const NavItems = () => {
 							onMouseLeave={() => setDrop1(false)}
 						>
 							<li className={st.navItems} key={index}>
-								<Link to={item.path} className={st.navTags}>
+								<Link to={item.path} className={st.navTags} key={index}>
 									{item.title}
 								</Link>
 							</li>
@@ -63,7 +64,7 @@ const NavItems = () => {
 									{cap.map((e, i) => {
 										return (
 											<li className={st.navItems} key={i}>
-												<Link to={e.path} className={st.navTags}>
+												<Link to={e.path} className={st.navTags} key={i}>
 													{e.title}
 												</Link>
 											</li>
