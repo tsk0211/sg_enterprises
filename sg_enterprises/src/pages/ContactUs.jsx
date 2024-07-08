@@ -4,23 +4,35 @@ import "./styles.css";
 import { useState } from "react";
 
 function ContactUs() {
-	const [fileObj, setFileObj] = useState({name: "" });
-	const [name, setName] = useState("");
-	const [mob, setMob] = useState("");
-	const [sub, setSub] = useState("");
-	const [email, setEmail] = useState("");
-	const [msg, setMsg] = useState("");
-	
+	const [fileObj, setFileObj] = useState({ name: "" });
+	const [formObj, setForm] = useState({
+		name: "",
+		email: "",
+		phone: "",
+		subject: "",
+		msg: "",
+	});
+
 	function fileChange(e) {
 		if (e.target.files) {
 			setFileObj(e.target.files[0]);
 			console.log("File Present");
 		}
 	}
-	
+
+	const handleForm = (e) => {
+		console.log(e);
+		const name= e.target.name;
+		const val= e.target.value;
+
+		setForm({
+			...formObj,
+			[name]: val,
+		});
+	};
+
 	function clickFunc(e) {
 		e.preventDefault();
-
 	}
 
 	document.addEventListener("DOMContentLoaded", function () {
@@ -59,7 +71,7 @@ function ContactUs() {
 					<input
 						type="text"
 						id="name"
-						onChange={(e) => setName(e.target.value)}
+						onChange={handleForm}
 						name="name"
 						placeholder="Name"
 						required
@@ -74,7 +86,7 @@ function ContactUs() {
 						type="email"
 						id="email"
 						name="email"
-						onChange={(w) => setEmail(w.target.value)}
+						onChange={handleForm}
 						placeholder="Email        eg. example@abc.com"
 						pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 						required
@@ -89,7 +101,7 @@ function ContactUs() {
 						type="tel"
 						id="mobile"
 						name="mobile"
-						onChange={(e) => setMob(e.target.value)}
+						onChange={handleForm}
 						placeholder="Mobile Number"
 						pattern="^[789]\d{9}$"
 						required
@@ -104,7 +116,7 @@ function ContactUs() {
 						type="text"
 						id="subject"
 						name="subject"
-						onChange={(e) => setSub(e.target.value)}
+						onChange={handleForm}
 						placeholder="Title..."
 						required
 					/>
@@ -117,7 +129,7 @@ function ContactUs() {
 					<textarea
 						id="message"
 						name="message"
-						onChange={(e) => setMsg(e.target.value)}
+						onChange={handleForm}
 						rows="4"
 						placeholder="Message"
 						required
